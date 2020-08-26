@@ -16,15 +16,20 @@ impl<'s> System<'s> for TransparencySystem {
 
             let value = (0.5 + time.sin() * 0.51).max(0.0).min(1.0);
 
+            //left
             if count < 3 {
                 tint.0.red = value;
                 tint.0.green = value;
                 tint.0.blue = value;
+            
+            //middle
             } else if count < 6 {
                 tint.0.red = value;
                 tint.0.green = value;
                 tint.0.blue = value;
                 tint.0.alpha = value;
+                
+            //right
             } else {
                 tint.0.alpha = value;
             }
